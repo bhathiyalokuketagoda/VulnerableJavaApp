@@ -1,0 +1,2751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+		</style>
+</head>
+<body>
+<h1>FindBugs Report</h1>
+<p>Produced using <a href="http://findbugs.sourceforge.net">FindBugs</a>3.0.1-rev11189b911ff3-jre6.</p>
+<p>Project: 
+			InfoIms</p>
+<h2>Metrics</h2>
+<p>26538 lines of code analyzed,
+	in 71 classes, 
+	in 4 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">111</td>
+<td align="right">4.18</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">55</td>
+<td align="right">2.07</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>166</b>
+</td>
+<td align="right">
+<b>6.26</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Summary</h2>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">21</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">114</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">27</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>166</b>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h1>Warnings</h1>
+<p>Click on each warning link to see a full description of the issue, and
+	    details of how to resolve it.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">Class names shouldn't shadow simple name of superclass</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>The class name Model.Object shadows the simple name of the superclass java.lang.Object<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 37
+						    to 69<br/>In class Model.Object<br/>In class java.lang.Object<br/>At Object.java:[lines 37-69]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DE_MIGHT_IGNORE">Method might ignore exception</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Service.password_encrypt_decrypt.encrypted(String) might ignore java.lang.Exception<br/>
+<br/>
+<br/>In file password_encrypt_decrypt.java,
+					
+						line 150<br/>In class Service.password_encrypt_decrypt<br/>In method Service.password_encrypt_decrypt.encrypted(String)<br/>Exception class java.lang.Exception<br/>At password_encrypt_decrypt.java:[line 150]<br/>At password_encrypt_decrypt.java:[line 150]<br/>At password_encrypt_decrypt.java:[line 150]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Comparison of String objects using == or !=</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Comparison of String objects using == or != in Service.AdminService.new_user_register(JTextField, JTextField, JComboBox, JPasswordField, JPasswordField) <br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 86<br/>In class Service.AdminService<br/>In method Service.AdminService.new_user_register(JTextField, JTextField, JComboBox, JPasswordField, JPasswordField)<br/>Actual type String<br/>Return value of javax.swing.JPasswordField.getText()<br/>At AdminService.java:[line 86]<br/>At AdminService.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#ES_COMPARING_STRINGS_WITH_EQ">Comparison of String objects using == or !=</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Comparison of String objects using == or != in Service.AdminService.user_update(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField) <br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 129<br/>In class Service.AdminService<br/>In method Service.AdminService.user_update(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField)<br/>Actual type String<br/>Return value of javax.swing.JPasswordField.getText()<br/>At AdminService.java:[line 129]<br/>At AdminService.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_METHOD_NAMING_CONVENTION">Method names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The method name Model.Formated.EndDate() doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Formated.java,
+					
+						lines 191
+						    to 192<br/>In class Model.Formated<br/>In method Model.Formated.EndDate()<br/>At Formated.java:[lines 191-192]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_METHOD_NAMING_CONVENTION">Method names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The method name Model.Formated.StartDate() doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Formated.java,
+					
+						lines 186
+						    to 187<br/>In class Model.Formated<br/>In method Model.Formated.StartDate()<br/>At Formated.java:[lines 186-187]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_METHOD_NAMING_CONVENTION">Method names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The method name Model.MessagePopUps.AccessDenideMessage() doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file MessagePopUps.java,
+					
+						lines 964
+						    to 966<br/>In class Model.MessagePopUps<br/>In method Model.MessagePopUps.AccessDenideMessage()<br/>At MessagePopUps.java:[lines 964-966]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_METHOD_NAMING_CONVENTION">Method names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The method name Model.MessagePopUps.Loss() doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file MessagePopUps.java,
+					
+						lines 191
+						    to 194<br/>In class Model.MessagePopUps<br/>In method Model.MessagePopUps.Loss()<br/>At MessagePopUps.java:[lines 191-194]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_METHOD_NAMING_CONVENTION">Method names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The method name Model.MessagePopUps.NetworkError() doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file MessagePopUps.java,
+					
+						lines 970
+						    to 972<br/>In class Model.MessagePopUps<br/>In method Model.MessagePopUps.NetworkError()<br/>At MessagePopUps.java:[lines 970-972]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.Admin doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.Admin<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.Bacup doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.Bacup<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.Formated doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.Formated<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.ItemMaster doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.ItemMaster<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.Jdbc doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.Jdbc<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.PastGrn doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.PastGrn<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.PastInvoice doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.PastInvoice<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name Model.Object.Supplier doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file Object.java,
+					
+						lines 
+						    to <br/>In class Model.Object<br/>Field Model.Object.Supplier<br/>In Object.java</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#NM_METHOD_NAMING_CONVENTION">Method names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The method name Service.DatabseBacup.DatabaseBacup(JLabel) doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file DatabseBacup.java,
+					
+						lines 19
+						    to 40<br/>In class Service.DatabseBacup<br/>In method Service.DatabseBacup.DatabaseBacup(JLabel)<br/>At DatabseBacup.java:[lines 19-40]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>The field name View.FrmHome1.Admin doesn't start with a lower case letter<br/>
+<br/>
+<br/>In file FrmHome1.java,
+					
+						lines 
+						    to <br/>In class View.FrmHome1<br/>Field View.FrmHome1.Admin<br/>In FrmHome1.java</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#ODR_OPEN_DATABASE_RESOURCE">Method may fail to close database resource</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Model.Jdbc.getdata(String) may fail to close Statement<br/>
+<br/>
+<br/>In file Jdbc.java,
+					
+						line 43<br/>In class Model.Jdbc<br/>In method Model.Jdbc.getdata(String)<br/>Need to close java.sql.Statement <br/>At Jdbc.java:[line 43]<br/>At Jdbc.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#ODR_OPEN_DATABASE_RESOURCE">Method may fail to close database resource</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Model.Jdbc.putdata(String) may fail to close PreparedStatement<br/>
+<br/>
+<br/>In file Jdbc.java,
+					
+						line 35<br/>In class Model.Jdbc<br/>In method Model.Jdbc.putdata(String)<br/>Need to close java.sql.PreparedStatement <br/>At Jdbc.java:[line 35]<br/>At Jdbc.java:[line 35]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#NP_NULL_ON_SOME_PATH_EXCEPTION">Possible null pointer dereference in method on exception path</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Possible null pointer dereference of dcipher in Service.password_encrypt_decrypt.decrypt(String) on exception path<br/>
+<br/>
+<br/>In file password_encrypt_decrypt.java,
+					
+						line 121<br/>In class Service.password_encrypt_decrypt<br/>In method Service.password_encrypt_decrypt.decrypt(String)<br/>Value loaded from dcipher<br/>Dereferenced at password_encrypt_decrypt.java:[line 121]<br/>Known null at password_encrypt_decrypt.java:[line 95]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_EXPERIMENTAL">Experimental Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#OBL_UNSATISFIED_OBLIGATION">Method may fail to clean up stream or resource</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Model.Jdbc.putdata(String) may fail to clean up java.sql.Statement<br/>
+<br/>
+<br/>In file Jdbc.java,
+					
+						line 35<br/>In class Model.Jdbc<br/>In method Model.Jdbc.putdata(String)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at Jdbc.java:[line 35] is not discharged<br/>Path continues at Jdbc.java:[line 36]<br/>Path continues at Jdbc.java:[line 39]<br/>Path continues at Jdbc.java:[line 40]<br/>Remaining obligations: {Statement x 1}</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Method may fail to clean up stream or resource on checked exception</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Model.Jdbc.getdata(String) may fail to clean up java.sql.Statement on checked exception<br/>
+<br/>
+<br/>In file Jdbc.java,
+					
+						line 43<br/>In class Model.Jdbc<br/>In method Model.Jdbc.getdata(String)<br/>Reference type java.sql.Statement<br/>1 instances of obligation remaining<br/>Obligation to clean up resource created at Jdbc.java:[line 43] is not discharged<br/>Path continues at Jdbc.java:[line 44]<br/>Remaining obligations: {Statement x 1}</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#EI_EXPOSE_REP2">May expose internal representation by incorporating reference to mutable object</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Model.AutoComboBox.setKeyWord(String[]) may expose internal representation by storing an externally mutable object into AutoComboBox.keyWord<br/>
+<br/>
+<br/>In file AutoComboBox.java,
+					
+						line 37<br/>In class Model.AutoComboBox<br/>In method Model.AutoComboBox.setKeyWord(String[])<br/>Field Model.AutoComboBox.keyWord<br/>Local variable named keyWord<br/>At AutoComboBox.java:[line 37]<br/>At AutoComboBox.java:[line 37]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.AdminService.check_user_permission_cheque(String, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 53<br/>In class Service.AdminService<br/>In method Service.AdminService.check_user_permission_cheque(String, String)<br/>At AdminService.java:[line 53]<br/>At AdminService.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.AdminService.check_user_permission_cheque_eithount_msg(String, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 31<br/>In class Service.AdminService<br/>In method Service.AdminService.check_user_permission_cheque_eithount_msg(String, String)<br/>At AdminService.java:[line 31]<br/>At AdminService.java:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.AdminService.new_user_register(JTextField, JTextField, JComboBox, JPasswordField, JPasswordField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 90<br/>In class Service.AdminService<br/>In method Service.AdminService.new_user_register(JTextField, JTextField, JComboBox, JPasswordField, JPasswordField)<br/>At AdminService.java:[line 90]<br/>At AdminService.java:[line 90]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.AdminService.save_group() passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 206<br/>In class Service.AdminService<br/>In method Service.AdminService.save_group()<br/>At AdminService.java:[line 206]<br/>At AdminService.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.AdminService.status_change(JTable) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 342<br/>In class Service.AdminService<br/>In method Service.AdminService.status_change(JTable)<br/>At AdminService.java:[line 342]<br/>At AdminService.java:[line 342]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.AdminService.user_serch(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 157<br/>In class Service.AdminService<br/>In method Service.AdminService.user_serch(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField)<br/>At AdminService.java:[line 157]<br/>At AdminService.java:[line 157]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.AdminService.user_update(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 112<br/>In class Service.AdminService<br/>In method Service.AdminService.user_update(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField)<br/>At AdminService.java:[line 112]<br/>At AdminService.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.AdminService.add_permission(JComboBox, JComboBox, JTable, JComboBox, JCheckBox) <br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 319<br/>In class Service.AdminService<br/>In method Service.AdminService.add_permission(JComboBox, JComboBox, JTable, JComboBox, JCheckBox)<br/>At AdminService.java:[line 319]<br/>At AdminService.java:[line 319]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.AdminService.new_user_register(JTextField, JTextField, JComboBox, JPasswordField, JPasswordField) <br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 95<br/>In class Service.AdminService<br/>In method Service.AdminService.new_user_register(JTextField, JTextField, JComboBox, JPasswordField, JPasswordField)<br/>At AdminService.java:[line 95]<br/>At AdminService.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.AdminService.save_group() <br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 210<br/>In class Service.AdminService<br/>In method Service.AdminService.save_group()<br/>At AdminService.java:[line 210]<br/>At AdminService.java:[line 210]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.AdminService.status_change(JTable) <br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 344<br/>In class Service.AdminService<br/>In method Service.AdminService.status_change(JTable)<br/>At AdminService.java:[line 344]<br/>At AdminService.java:[line 344]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.AdminService.user_update(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField) <br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 133<br/>In class Service.AdminService<br/>In method Service.AdminService.user_update(JTextField, JPasswordField, JTextField, JTextField, JComboBox, JPasswordField, JPasswordField)<br/>At AdminService.java:[line 133]<br/>At AdminService.java:[line 133]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.CustomerService.save_customer(JTextField, JTextField, JTextField, JTextField, JTextField, JTable) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file CustomerService.java,
+					
+						line 35<br/>In class Service.CustomerService<br/>In method Service.CustomerService.save_customer(JTextField, JTextField, JTextField, JTextField, JTextField, JTable)<br/>At CustomerService.java:[line 35]<br/>At CustomerService.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.CustomerService.customer_update(JButton, JButton, JTextField, JTextField, JTextField, JTextField, JTextField, JTable) <br/>
+<br/>
+<br/>In file CustomerService.java,
+					
+						line 151<br/>In class Service.CustomerService<br/>In method Service.CustomerService.customer_update(JButton, JButton, JTextField, JTextField, JTextField, JTextField, JTextField, JTable)<br/>At CustomerService.java:[line 151]<br/>At CustomerService.java:[line 151]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.CustomerService.save_customer(JTextField, JTextField, JTextField, JTextField, JTextField, JTable) <br/>
+<br/>
+<br/>In file CustomerService.java,
+					
+						line 43<br/>In class Service.CustomerService<br/>In method Service.CustomerService.save_customer(JTextField, JTextField, JTextField, JTextField, JTextField, JTable)<br/>At CustomerService.java:[line 43]<br/>At CustomerService.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.ExpencesIncomeService.save(JTable, JLabel, JComboBox) <br/>
+<br/>
+<br/>In file ExpencesIncomeService.java,
+					
+						line 89<br/>In class Service.ExpencesIncomeService<br/>In method Service.ExpencesIncomeService.save(JTable, JLabel, JComboBox)<br/>At ExpencesIncomeService.java:[line 89]<br/>At ExpencesIncomeService.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.InvoiceReturnInvoice.add(JLabel, JLabel, JTextField, JLabel, JComboBox, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JComboBox, JTextField, JLabel, JTable, JLabel) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file InvoiceReturnInvoice.java,
+					
+						line 93<br/>In class Service.InvoiceReturnInvoice<br/>In method Service.InvoiceReturnInvoice.add(JLabel, JLabel, JTextField, JLabel, JComboBox, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JComboBox, JTextField, JLabel, JTable, JLabel)<br/>At InvoiceReturnInvoice.java:[line 93]<br/>At InvoiceReturnInvoice.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file InvoiceReturnInvoice.java,
+					
+						line 221<br/>In class Service.InvoiceReturnInvoice<br/>In method Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel)<br/>At InvoiceReturnInvoice.java:[line 221]<br/>At InvoiceReturnInvoice.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.InvoiceReturnInvoice.invoice_Select(JTextField, JLabel, JLabel, JComboBox) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file InvoiceReturnInvoice.java,
+					
+						line 41<br/>In class Service.InvoiceReturnInvoice<br/>In method Service.InvoiceReturnInvoice.invoice_Select(JTextField, JLabel, JLabel, JComboBox)<br/>At InvoiceReturnInvoice.java:[line 41]<br/>At InvoiceReturnInvoice.java:[line 41]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.InvoiceReturnInvoice.item_code_action(JTextField, JComboBox, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JComboBox) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file InvoiceReturnInvoice.java,
+					
+						line 70<br/>In class Service.InvoiceReturnInvoice<br/>In method Service.InvoiceReturnInvoice.item_code_action(JTextField, JComboBox, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JComboBox)<br/>At InvoiceReturnInvoice.java:[line 70]<br/>At InvoiceReturnInvoice.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel) <br/>
+<br/>
+<br/>In file InvoiceReturnInvoice.java,
+					
+						line 220<br/>In class Service.InvoiceReturnInvoice<br/>In method Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel)<br/>At InvoiceReturnInvoice.java:[line 220]<br/>At InvoiceReturnInvoice.java:[line 220]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ItemTransferService.item_code_action(JTextField, JLabel, JTextField, JTextField, JList, JComboBox, JLabel) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 102<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.item_code_action(JTextField, JLabel, JTextField, JTextField, JList, JComboBox, JLabel)<br/>At ItemTransferService.java:[line 102]<br/>At ItemTransferService.java:[line 102]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ItemTransferService.item_code_key_release(JTextField, JList, JList) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 42<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.item_code_key_release(JTextField, JList, JList)<br/>At ItemTransferService.java:[line 42]<br/>At ItemTransferService.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ItemTransferService.item_code_list_value_change(JList, JLabel, JTextField, JTextField, JLabel, JList, JComboBox, JLabel) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 282<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.item_code_list_value_change(JList, JLabel, JTextField, JTextField, JLabel, JList, JComboBox, JLabel)<br/>At ItemTransferService.java:[line 282]<br/>At ItemTransferService.java:[line 282]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ItemTransferService.item_name_key_release(JTextField, JList, JList) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 60<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.item_name_key_release(JTextField, JList, JList)<br/>At ItemTransferService.java:[line 60]<br/>At ItemTransferService.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ItemTransferService.save_invoice(JLabel, JTextField, JTable, JComboBox, JComboBox) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 331<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.save_invoice(JLabel, JTextField, JTable, JComboBox, JComboBox)<br/>At ItemTransferService.java:[line 331]<br/>At ItemTransferService.java:[line 331]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ItemTransferService.transfer_invoice_add(JLabel, JTextField, JComboBox, JComboBox, JTextField, JTextField, JTextField, JLabel, JTextField, JLabel, JTable, JLabel, JLabel, JLabel) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 200<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.transfer_invoice_add(JLabel, JTextField, JComboBox, JComboBox, JTextField, JTextField, JTextField, JLabel, JTextField, JLabel, JTable, JLabel, JLabel, JLabel)<br/>At ItemTransferService.java:[line 200]<br/>At ItemTransferService.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.ItemTransferService.save_invoice(JLabel, JTextField, JTable, JComboBox, JComboBox) <br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 350<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.save_invoice(JLabel, JTextField, JTable, JComboBox, JComboBox)<br/>At ItemTransferService.java:[line 350]<br/>At ItemTransferService.java:[line 350]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.Key_Activator.srial_check(JPasswordField) <br/>
+<br/>
+<br/>In file Key_Activator.java,
+					
+						line 147<br/>In class Service.Key_Activator<br/>In method Service.Key_Activator.srial_check(JPasswordField)<br/>At Key_Activator.java:[line 147]<br/>At Key_Activator.java:[line 147]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.NotificationService.load_customer_pending_cheque(JTable, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file NotificationService.java,
+					
+						line 53<br/>In class Service.NotificationService<br/>In method Service.NotificationService.load_customer_pending_cheque(JTable, JTextField)<br/>At NotificationService.java:[line 53]<br/>At NotificationService.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.NotificationService.load_customer_pending_cheque_search(JTable, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file NotificationService.java,
+					
+						line 132<br/>In class Service.NotificationService<br/>In method Service.NotificationService.load_customer_pending_cheque_search(JTable, JTextField)<br/>At NotificationService.java:[line 132]<br/>At NotificationService.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.NotificationService.load_item_code_details(JTable, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file NotificationService.java,
+					
+						line 371<br/>In class Service.NotificationService<br/>In method Service.NotificationService.load_item_code_details(JTable, JTextField)<br/>At NotificationService.java:[line 371]<br/>At NotificationService.java:[line 371]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.NotificationService.load_item_desciption_details(JTable, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file NotificationService.java,
+					
+						line 402<br/>In class Service.NotificationService<br/>In method Service.NotificationService.load_item_desciption_details(JTable, JTextField)<br/>At NotificationService.java:[line 402]<br/>At NotificationService.java:[line 402]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.NotificationService.load_minimum_qty(JTable, JComboBox, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file NotificationService.java,
+					
+						line 30<br/>In class Service.NotificationService<br/>In method Service.NotificationService.load_minimum_qty(JTable, JComboBox, JTextField)<br/>At NotificationService.java:[line 30]<br/>At NotificationService.java:[line 30]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.NotificationService.load_supplier_pending_cheque(JTable, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file NotificationService.java,
+					
+						line 209<br/>In class Service.NotificationService<br/>In method Service.NotificationService.load_supplier_pending_cheque(JTable, JTextField)<br/>At NotificationService.java:[line 209]<br/>At NotificationService.java:[line 209]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.NotificationService.load_supplier_pending_cheque_search(JTable, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file NotificationService.java,
+					
+						line 290<br/>In class Service.NotificationService<br/>In method Service.NotificationService.load_supplier_pending_cheque_search(JTable, JTextField)<br/>At NotificationService.java:[line 290]<br/>At NotificationService.java:[line 290]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.PastGrn.search_past_grn_number(JList, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file PastGrn.java,
+					
+						line 69<br/>In class Service.PastGrn<br/>In method Service.PastGrn.search_past_grn_number(JList, JTextField)<br/>At PastGrn.java:[line 69]<br/>At PastGrn.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.PastGrn.search_past_grn_number_supplierwise(JList, JTextField) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file PastGrn.java,
+					
+						line 110<br/>In class Service.PastGrn<br/>In method Service.PastGrn.search_past_grn_number_supplierwise(JList, JTextField)<br/>At PastGrn.java:[line 110]<br/>At PastGrn.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.PastGrn.select_code(String, JLabel, JLabel, JLabel, JLabel) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file PastGrn.java,
+					
+						line 146<br/>In class Service.PastGrn<br/>In method Service.PastGrn.select_code(String, JLabel, JLabel, JLabel, JLabel)<br/>At PastGrn.java:[line 146]<br/>At PastGrn.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.PaymentVerificationService.save_new(String, String, String, String, String) <br/>
+<br/>
+<br/>In file PaymentVerificationService.java,
+					
+						line 60<br/>In class Service.PaymentVerificationService<br/>In method Service.PaymentVerificationService.save_new(String, String, String, String, String)<br/>At PaymentVerificationService.java:[line 60]<br/>At PaymentVerificationService.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.All_customer_item_sale(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 939<br/>In class Service.ReportService<br/>In method Service.ReportService.All_customer_item_sale(JScrollPane)<br/>At ReportService.java:[line 939]<br/>At ReportService.java:[line 939]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.age_analysis_summery(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2554<br/>In class Service.ReportService<br/>In method Service.ReportService.age_analysis_summery(JScrollPane, String)<br/>At ReportService.java:[line 2554]<br/>At ReportService.java:[line 2554]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.customer_outstanding(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1167<br/>In class Service.ReportService<br/>In method Service.ReportService.customer_outstanding(JScrollPane)<br/>At ReportService.java:[line 1167]<br/>At ReportService.java:[line 1167]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.customer_wise_outstanding(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1333<br/>In class Service.ReportService<br/>In method Service.ReportService.customer_wise_outstanding(JScrollPane, String)<br/>At ReportService.java:[line 1333]<br/>At ReportService.java:[line 1333]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.customer_wise_sale_report(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1053<br/>In class Service.ReportService<br/>In method Service.ReportService.customer_wise_sale_report(JScrollPane)<br/>At ReportService.java:[line 1053]<br/>At ReportService.java:[line 1053]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.date_wise_customer_allcheque(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 400<br/>In class Service.ReportService<br/>In method Service.ReportService.date_wise_customer_allcheque(JScrollPane)<br/>At ReportService.java:[line 400]<br/>At ReportService.java:[line 400]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.date_wise_payment(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 294<br/>In class Service.ReportService<br/>In method Service.ReportService.date_wise_payment(JScrollPane)<br/>At ReportService.java:[line 294]<br/>At ReportService.java:[line 294]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.full_item_bincard(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2302<br/>In class Service.ReportService<br/>In method Service.ReportService.full_item_bincard(JScrollPane)<br/>At ReportService.java:[line 2302]<br/>At ReportService.java:[line 2302]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.item_total_supplier(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1737<br/>In class Service.ReportService<br/>In method Service.ReportService.item_total_supplier(JScrollPane)<br/>At ReportService.java:[line 1737]<br/>At ReportService.java:[line 1737]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.item_wise_day_today_sale(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 533<br/>In class Service.ReportService<br/>In method Service.ReportService.item_wise_day_today_sale(JScrollPane)<br/>At ReportService.java:[line 533]<br/>At ReportService.java:[line 533]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.location_wise_item_bincard(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2367<br/>In class Service.ReportService<br/>In method Service.ReportService.location_wise_item_bincard(JScrollPane)<br/>At ReportService.java:[line 2367]<br/>At ReportService.java:[line 2367]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.past_grn(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2132<br/>In class Service.ReportService<br/>In method Service.ReportService.past_grn(JScrollPane, String)<br/>At ReportService.java:[line 2132]<br/>At ReportService.java:[line 2132]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.profit_loss_chart(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 817<br/>In class Service.ReportService<br/>In method Service.ReportService.profit_loss_chart(JScrollPane)<br/>At ReportService.java:[line 817]<br/>At ReportService.java:[line 817]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.profit_loss_detail(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 700<br/>In class Service.ReportService<br/>In method Service.ReportService.profit_loss_detail(JScrollPane)<br/>At ReportService.java:[line 700]<br/>At ReportService.java:[line 700]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.sales_collection(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2617<br/>In class Service.ReportService<br/>In method Service.ReportService.sales_collection(JScrollPane)<br/>At ReportService.java:[line 2617]<br/>At ReportService.java:[line 2617]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.stock(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2426<br/>In class Service.ReportService<br/>In method Service.ReportService.stock(JScrollPane)<br/>At ReportService.java:[line 2426]<br/>At ReportService.java:[line 2426]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.suplier_wise_outstanding(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1978<br/>In class Service.ReportService<br/>In method Service.ReportService.suplier_wise_outstanding(JScrollPane, String)<br/>At ReportService.java:[line 1978]<br/>At ReportService.java:[line 1978]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.supplier_total_outstanding(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1810<br/>In class Service.ReportService<br/>In method Service.ReportService.supplier_total_outstanding(JScrollPane)<br/>At ReportService.java:[line 1810]<br/>At ReportService.java:[line 1810]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.supplier_wise_item_total(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2185<br/>In class Service.ReportService<br/>In method Service.ReportService.supplier_wise_item_total(JScrollPane)<br/>At ReportService.java:[line 2185]<br/>At ReportService.java:[line 2185]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.supplier_wise_stock(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1572<br/>In class Service.ReportService<br/>In method Service.ReportService.supplier_wise_stock(JScrollPane)<br/>At ReportService.java:[line 1572]<br/>At ReportService.java:[line 1572]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportService.total_sales_amount(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2858<br/>In class Service.ReportService<br/>In method Service.ReportService.total_sales_amount(JScrollPane)<br/>At ReportService.java:[line 2858]<br/>At ReportService.java:[line 2858]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.All_customer_item_sale(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 978<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.All_customer_item_sale(JScrollPane)<br/>At ReportServiceOutlet.java:[line 978]<br/>At ReportServiceOutlet.java:[line 978]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.age_analysis_summery(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2622<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.age_analysis_summery(JScrollPane, String)<br/>At ReportServiceOutlet.java:[line 2622]<br/>At ReportServiceOutlet.java:[line 2622]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.customer_outstanding(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1224<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.customer_outstanding(JScrollPane)<br/>At ReportServiceOutlet.java:[line 1224]<br/>At ReportServiceOutlet.java:[line 1224]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.customer_wise_outstanding(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1394<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.customer_wise_outstanding(JScrollPane, String)<br/>At ReportServiceOutlet.java:[line 1394]<br/>At ReportServiceOutlet.java:[line 1394]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.customer_wise_sale_report(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1095<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.customer_wise_sale_report(JScrollPane)<br/>At ReportServiceOutlet.java:[line 1095]<br/>At ReportServiceOutlet.java:[line 1095]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.date_wise_customer_allcheque(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 404<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.date_wise_customer_allcheque(JScrollPane)<br/>At ReportServiceOutlet.java:[line 404]<br/>At ReportServiceOutlet.java:[line 404]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.date_wise_payment(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 288<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.date_wise_payment(JScrollPane)<br/>At ReportServiceOutlet.java:[line 288]<br/>At ReportServiceOutlet.java:[line 288]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.full_item_bincard(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2368<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.full_item_bincard(JScrollPane)<br/>At ReportServiceOutlet.java:[line 2368]<br/>At ReportServiceOutlet.java:[line 2368]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.invoice_return(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2805<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.invoice_return(JScrollPane)<br/>At ReportServiceOutlet.java:[line 2805]<br/>At ReportServiceOutlet.java:[line 2805]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.item_total_supplier(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1804<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.item_total_supplier(JScrollPane)<br/>At ReportServiceOutlet.java:[line 1804]<br/>At ReportServiceOutlet.java:[line 1804]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.item_wise_day_today_sale(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 578<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.item_wise_day_today_sale(JScrollPane)<br/>At ReportServiceOutlet.java:[line 578]<br/>At ReportServiceOutlet.java:[line 578]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.location_wise_item_bincard(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2431<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.location_wise_item_bincard(JScrollPane)<br/>At ReportServiceOutlet.java:[line 2431]<br/>At ReportServiceOutlet.java:[line 2431]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.profit_loss_chart(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 851<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.profit_loss_chart(JScrollPane)<br/>At ReportServiceOutlet.java:[line 851]<br/>At ReportServiceOutlet.java:[line 851]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.profit_loss_detail(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 727<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.profit_loss_detail(JScrollPane)<br/>At ReportServiceOutlet.java:[line 727]<br/>At ReportServiceOutlet.java:[line 727]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.sales_collection(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2684<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.sales_collection(JScrollPane)<br/>At ReportServiceOutlet.java:[line 2684]<br/>At ReportServiceOutlet.java:[line 2684]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.stock(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2487<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.stock(JScrollPane)<br/>At ReportServiceOutlet.java:[line 2487]<br/>At ReportServiceOutlet.java:[line 2487]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.suplier_wise_outstanding(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2039<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.suplier_wise_outstanding(JScrollPane, String)<br/>At ReportServiceOutlet.java:[line 2039]<br/>At ReportServiceOutlet.java:[line 2039]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.supplier_total_outstanding(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1873<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.supplier_total_outstanding(JScrollPane)<br/>At ReportServiceOutlet.java:[line 1873]<br/>At ReportServiceOutlet.java:[line 1873]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.supplier_wise_item_total(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2242<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.supplier_wise_item_total(JScrollPane)<br/>At ReportServiceOutlet.java:[line 2242]<br/>At ReportServiceOutlet.java:[line 2242]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.supplier_wise_stock(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1637<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.supplier_wise_stock(JScrollPane)<br/>At ReportServiceOutlet.java:[line 1637]<br/>At ReportServiceOutlet.java:[line 1637]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceOutlet.total_sales_amount(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2912<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.total_sales_amount(JScrollPane)<br/>At ReportServiceOutlet.java:[line 2912]<br/>At ReportServiceOutlet.java:[line 2912]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.All_customer_item_sale(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 976<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.All_customer_item_sale(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 976]<br/>At ReportServiceWarehuse.java:[line 976]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.age_analysis_summery(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2625<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.age_analysis_summery(JScrollPane, String)<br/>At ReportServiceWarehuse.java:[line 2625]<br/>At ReportServiceWarehuse.java:[line 2625]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.customer_outstanding(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1221<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.customer_outstanding(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 1221]<br/>At ReportServiceWarehuse.java:[line 1221]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.customer_wise_outstanding(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1391<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.customer_wise_outstanding(JScrollPane, String)<br/>At ReportServiceWarehuse.java:[line 1391]<br/>At ReportServiceWarehuse.java:[line 1391]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.customer_wise_sale_report(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1092<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.customer_wise_sale_report(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 1092]<br/>At ReportServiceWarehuse.java:[line 1092]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.date_wise_customer_allcheque(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 402<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.date_wise_customer_allcheque(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 402]<br/>At ReportServiceWarehuse.java:[line 402]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.date_wise_payment(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 286<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.date_wise_payment(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 286]<br/>At ReportServiceWarehuse.java:[line 286]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.full_item_bincard(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2372<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.full_item_bincard(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 2372]<br/>At ReportServiceWarehuse.java:[line 2372]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.invoice_return(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2809<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.invoice_return(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 2809]<br/>At ReportServiceWarehuse.java:[line 2809]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.item_total_supplier(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1801<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.item_total_supplier(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 1801]<br/>At ReportServiceWarehuse.java:[line 1801]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.item_wise_day_today_sale(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 576<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.item_wise_day_today_sale(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 576]<br/>At ReportServiceWarehuse.java:[line 576]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.location_wise_item_bincard(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2435<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.location_wise_item_bincard(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 2435]<br/>At ReportServiceWarehuse.java:[line 2435]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.profit_loss_chart(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 849<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.profit_loss_chart(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 849]<br/>At ReportServiceWarehuse.java:[line 849]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.profit_loss_detail(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 725<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.profit_loss_detail(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 725]<br/>At ReportServiceWarehuse.java:[line 725]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.sales_collection(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2688<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.sales_collection(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 2688]<br/>At ReportServiceWarehuse.java:[line 2688]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.stock(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2491<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.stock(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 2491]<br/>At ReportServiceWarehuse.java:[line 2491]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.suplier_wise_outstanding(JScrollPane, String) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2043<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.suplier_wise_outstanding(JScrollPane, String)<br/>At ReportServiceWarehuse.java:[line 2043]<br/>At ReportServiceWarehuse.java:[line 2043]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.supplier_total_outstanding(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1877<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.supplier_total_outstanding(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 1877]<br/>At ReportServiceWarehuse.java:[line 1877]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.supplier_wise_item_total(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2246<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.supplier_wise_item_total(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 2246]<br/>At ReportServiceWarehuse.java:[line 2246]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.supplier_wise_stock(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1634<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.supplier_wise_stock(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 1634]<br/>At ReportServiceWarehuse.java:[line 1634]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Service.ReportServiceWarehuse.total_sales_amount(JScrollPane) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2918<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.total_sales_amount(JScrollPane)<br/>At ReportServiceWarehuse.java:[line 2918]<br/>At ReportServiceWarehuse.java:[line 2918]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DMI_EMPTY_DB_PASSWORD">Empty database password</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Empty database password in Model.Jdbc.getconnection()<br/>
+<br/>
+<br/>In file Jdbc.java,
+					
+						line 27<br/>In class Model.Jdbc<br/>In method Model.Jdbc.getconnection()<br/>At Jdbc.java:[line 27]<br/>At Jdbc.java:[line 27]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#COMMAND_INJECTION">Potential Command Injection</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Runtime.exec(...) is used to executed system commands.<br/>
+<br/>
+<br/>In file DatabseBacup.java,
+					
+						line 30<br/>In class Service.DatabseBacup<br/>In method Service.DatabseBacup.DatabaseBacup(JLabel)<br/>At DatabseBacup.java:[line 30]<br/>Value Runtime.exec(...)</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#PATH_TRAVERSAL_IN">Potential Path Traversal (File Read)</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Method java.io.File reads a file whose location is specified by user input.<br/>
+<br/>
+<br/>In file DatabseBacup.java,
+					
+						line 20<br/>In class Service.DatabseBacup<br/>In method Service.DatabseBacup.DatabaseBacup(JLabel)<br/>At DatabseBacup.java:[line 20]<br/>Value java.io.File</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Service.AdminService.add_permission(JComboBox, JComboBox, JTable, JComboBox, JCheckBox) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 298<br/>In class Service.AdminService<br/>In method Service.AdminService.add_permission(JComboBox, JComboBox, JTable, JComboBox, JCheckBox)<br/>At AdminService.java:[line 298]<br/>At AdminService.java:[line 298]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Service.AdminService.load_function(JComboBox, JComboBox) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 237<br/>In class Service.AdminService<br/>In method Service.AdminService.load_function(JComboBox, JComboBox)<br/>At AdminService.java:[line 237]<br/>At AdminService.java:[line 237]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Service.AdminService.load_table(JComboBox, JComboBox, JTable) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 270<br/>In class Service.AdminService<br/>In method Service.AdminService.load_table(JComboBox, JComboBox, JTable)<br/>At AdminService.java:[line 270]<br/>At AdminService.java:[line 270]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Service.AdminService.load_table_by_user(JComboBox, JComboBox, JTable) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file AdminService.java,
+					
+						line 251<br/>In class Service.AdminService<br/>In method Service.AdminService.load_table_by_user(JComboBox, JComboBox, JTable)<br/>At AdminService.java:[line 251]<br/>At AdminService.java:[line 251]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.CustomerService.customer_delete(JTable) <br/>
+<br/>
+<br/>In file CustomerService.java,
+					
+						line 164<br/>In class Service.CustomerService<br/>In method Service.CustomerService.customer_delete(JTable)<br/>At CustomerService.java:[line 164]<br/>At CustomerService.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Service.ItemTransferService.available_stock(JComboBox, JLabel, JList) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file ItemTransferService.java,
+					
+						line 300<br/>In class Service.ItemTransferService<br/>In method Service.ItemTransferService.available_stock(JComboBox, JLabel, JList)<br/>At ItemTransferService.java:[line 300]<br/>At ItemTransferService.java:[line 300]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Service.PaymentVerificationService.approve(JTable) passes a nonconstant String to an execute or addBatch method on an SQL statement<br/>
+<br/>
+<br/>In file PaymentVerificationService.java,
+					
+						line 44<br/>In class Service.PaymentVerificationService<br/>In method Service.PaymentVerificationService.approve(JTable)<br/>At PaymentVerificationService.java:[line 44]<br/>At PaymentVerificationService.java:[line 44]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>A prepared statement is generated from a nonconstant String in Service.PaymentVerificationService.approve(JTable) <br/>
+<br/>
+<br/>In file PaymentVerificationService.java,
+					
+						line 48<br/>In class Service.PaymentVerificationService<br/>In method Service.PaymentVerificationService.approve(JTable)<br/>At PaymentVerificationService.java:[line 48]<br/>At PaymentVerificationService.java:[line 48]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Dead store to tbl in Service.ReportService.customer_wise_sale_report(JScrollPane)<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1074<br/>In class Service.ReportService<br/>In method Service.ReportService.customer_wise_sale_report(JScrollPane)<br/>Local variable named tbl<br/>At ReportService.java:[line 1074]<br/>At ReportService.java:[line 1074]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Dead store to tbl in Service.ReportService.past_invoice(JScrollPane, String)<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 1117<br/>In class Service.ReportService<br/>In method Service.ReportService.past_invoice(JScrollPane, String)<br/>Local variable named tbl<br/>At ReportService.java:[line 1117]<br/>At ReportService.java:[line 1117]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Dead store to jrv in Service.ReportServiceOutlet.customer_item_sale(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1603<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.customer_item_sale(JScrollPane)<br/>Local variable named jrv<br/>At ReportServiceOutlet.java:[line 1603]<br/>At ReportServiceOutlet.java:[line 1603]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Dead store to datasourse in Service.ReportServiceOutlet.customer_wise_sale_report(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1131<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.customer_wise_sale_report(JScrollPane)<br/>Local variable named datasourse<br/>At ReportServiceOutlet.java:[line 1131]<br/>At ReportServiceOutlet.java:[line 1131]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Dead store to tbl in Service.ReportServiceOutlet.past_invoice(JScrollPane, String)<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 1174<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.past_invoice(JScrollPane, String)<br/>Local variable named tbl<br/>At ReportServiceOutlet.java:[line 1174]<br/>At ReportServiceOutlet.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Dead store to datasourse in Service.ReportServiceWarehuse.customer_wise_sale_report(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1128<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.customer_wise_sale_report(JScrollPane)<br/>Local variable named datasourse<br/>At ReportServiceWarehuse.java:[line 1128]<br/>At ReportServiceWarehuse.java:[line 1128]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>Dead store to tbl in Service.ReportServiceWarehuse.past_invoice(JScrollPane, String)<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 1171<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.past_invoice(JScrollPane, String)<br/>Local variable named tbl<br/>At ReportServiceWarehuse.java:[line 1171]<br/>At ReportServiceWarehuse.java:[line 1171]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to d in Model.Formated.Double_format_check(JTextField)<br/>
+<br/>
+<br/>In file Formated.java,
+					
+						line 161<br/>In class Model.Formated<br/>In method Model.Formated.Double_format_check(JTextField)<br/>Local variable named d<br/>At Formated.java:[line 161]<br/>At Formated.java:[line 161]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to firstTime in Model.Formated.date_fromat(JTextField)<br/>
+<br/>
+<br/>In file Formated.java,
+					
+						line 50<br/>In class Model.Formated<br/>In method Model.Formated.date_fromat(JTextField)<br/>Local variable named firstTime<br/>At Formated.java:[line 50]<br/>At Formated.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to i in Model.Formated.int_formate_check(JTextField)<br/>
+<br/>
+<br/>In file Formated.java,
+					
+						line 175<br/>In class Model.Formated<br/>In method Model.Formated.int_formate_check(JTextField)<br/>Local variable named i<br/>At Formated.java:[line 175]<br/>At Formated.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to currect_date in Model.Formated.string_date_fromat(String)<br/>
+<br/>
+<br/>In file Formated.java,
+					
+						line 64<br/>In class Model.Formated<br/>In method Model.Formated.string_date_fromat(String)<br/>Local variable named currect_date<br/>At Formated.java:[line 64]<br/>At Formated.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to address in Service.ReportService.profit_loss_chart(JScrollPane)<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 809<br/>In class Service.ReportService<br/>In method Service.ReportService.profit_loss_chart(JScrollPane)<br/>Local variable named address<br/>At ReportService.java:[line 809]<br/>At ReportService.java:[line 809]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to company in Service.ReportService.profit_loss_chart(JScrollPane)<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 808<br/>In class Service.ReportService<br/>In method Service.ReportService.profit_loss_chart(JScrollPane)<br/>Local variable named company<br/>At ReportService.java:[line 808]<br/>At ReportService.java:[line 808]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to start_date1 in Service.ReportService.total_sales_amount(JScrollPane)<br/>
+<br/>
+<br/>In file ReportService.java,
+					
+						line 2851<br/>In class Service.ReportService<br/>In method Service.ReportService.total_sales_amount(JScrollPane)<br/>Local variable named start_date1<br/>At ReportService.java:[line 2851]<br/>At ReportService.java:[line 2851]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to address in Service.ReportServiceOutlet.profit_loss_chart(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 843<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.profit_loss_chart(JScrollPane)<br/>Local variable named address<br/>At ReportServiceOutlet.java:[line 843]<br/>At ReportServiceOutlet.java:[line 843]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to company in Service.ReportServiceOutlet.profit_loss_chart(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 842<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.profit_loss_chart(JScrollPane)<br/>Local variable named company<br/>At ReportServiceOutlet.java:[line 842]<br/>At ReportServiceOutlet.java:[line 842]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to start_date1 in Service.ReportServiceOutlet.total_sales_amount(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceOutlet.java,
+					
+						line 2905<br/>In class Service.ReportServiceOutlet<br/>In method Service.ReportServiceOutlet.total_sales_amount(JScrollPane)<br/>Local variable named start_date1<br/>At ReportServiceOutlet.java:[line 2905]<br/>At ReportServiceOutlet.java:[line 2905]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to address in Service.ReportServiceWarehuse.profit_loss_chart(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 841<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.profit_loss_chart(JScrollPane)<br/>Local variable named address<br/>At ReportServiceWarehuse.java:[line 841]<br/>At ReportServiceWarehuse.java:[line 841]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to company in Service.ReportServiceWarehuse.profit_loss_chart(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 840<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.profit_loss_chart(JScrollPane)<br/>Local variable named company<br/>At ReportServiceWarehuse.java:[line 840]<br/>At ReportServiceWarehuse.java:[line 840]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to start_date1 in Service.ReportServiceWarehuse.total_sales_amount(JScrollPane)<br/>
+<br/>
+<br/>In file ReportServiceWarehuse.java,
+					
+						line 2911<br/>In class Service.ReportServiceWarehuse<br/>In method Service.ReportServiceWarehuse.total_sales_amount(JScrollPane)<br/>Local variable named start_date1<br/>At ReportServiceWarehuse.java:[line 2911]<br/>At ReportServiceWarehuse.java:[line 2911]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Dead store to i in new View.FrmHome1()<br/>
+<br/>
+<br/>In file FrmHome1.java,
+					
+						line 48<br/>In class View.FrmHome1<br/>In method new View.FrmHome1()<br/>Local variable named i<br/>At FrmHome1.java:[line 48]<br/>At FrmHome1.java:[line 48]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SA_LOCAL_SELF_ASSIGNMENT">Self assignment of local variable</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Self assignment of $L2 in new View.FrmHome1()<br/>
+<br/>
+<br/>In file FrmHome1.java,
+					
+						line 49<br/>In class View.FrmHome1<br/>In method new View.FrmHome1()<br/>Local variable stored in JVM register 2<br/>At FrmHome1.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Write to static field View.FrmCheque.customer_cheque from instance method Service.ChequeService.add_invoice(JTable, JTextField, JLabel, JLabel, JLabel, JLabel, JRadioButton, JRadioButton)<br/>
+<br/>
+<br/>In file ChequeService.java,
+					
+						line 150<br/>In class Service.ChequeService<br/>In method Service.ChequeService.add_invoice(JTable, JTextField, JLabel, JLabel, JLabel, JLabel, JRadioButton, JRadioButton)<br/>Field View.FrmCheque.customer_cheque<br/>At ChequeService.java:[line 150]<br/>At ChequeService.java:[line 150]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Write to static field View.FrmCheque.old_cheque_number from instance method Service.ChequeService.cheque_list_select(JTabbedPane, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JComboBox, JList, JLabel)<br/>
+<br/>
+<br/>In file ChequeService.java,
+					
+						line 334<br/>In class Service.ChequeService<br/>In method Service.ChequeService.cheque_list_select(JTabbedPane, JLabel, JLabel, JLabel, JLabel, JLabel, JLabel, JComboBox, JList, JLabel)<br/>Field View.FrmCheque.old_cheque_number<br/>At ChequeService.java:[line 334]<br/>At ChequeService.java:[line 334]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Write to static field View.FrmCheque.customer_cheque from instance method Service.ChequeService.save_cheque(JLabel, JLabel, JTable, JTable, JLabel, JLabel, JRadioButton, JRadioButton, JTextField)<br/>
+<br/>
+<br/>In file ChequeService.java,
+					
+						line 286<br/>In class Service.ChequeService<br/>In method Service.ChequeService.save_cheque(JLabel, JLabel, JTable, JTable, JLabel, JLabel, JRadioButton, JRadioButton, JTextField)<br/>Field View.FrmCheque.customer_cheque<br/>At ChequeService.java:[line 286]<br/>At ChequeService.java:[line 286]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Write to static field View.FrmInvoiceReturn.new_invo_code from instance method Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel)<br/>
+<br/>
+<br/>In file InvoiceReturnInvoice.java,
+					
+						line 253<br/>In class Service.InvoiceReturnInvoice<br/>In method Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel)<br/>Field View.FrmInvoiceReturn.new_invo_code<br/>At InvoiceReturnInvoice.java:[line 253]<br/>At InvoiceReturnInvoice.java:[line 253]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Write to static field View.FrmInvoiceReturn.return_type from instance method Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel)<br/>
+<br/>
+<br/>In file InvoiceReturnInvoice.java,
+					
+						line 252<br/>In class Service.InvoiceReturnInvoice<br/>In method Service.InvoiceReturnInvoice.end_return(JTable, JLabel, JTextField, JLabel, JLabel, JLabel)<br/>Field View.FrmInvoiceReturn.return_type<br/>At InvoiceReturnInvoice.java:[line 252]<br/>At InvoiceReturnInvoice.java:[line 252]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h1>
+<a name="Details">Warning Types</a>
+</h1>
+<h2>
+<a name="DE_MIGHT_IGNORE">Method might ignore exception</a>
+</h2>
+
+  <p> This method might ignore an exception.&nbsp; In general, exceptions
+  should be handled or reported in some way, or they should be thrown
+  out of the method.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="DLS_DEAD_LOCAL_STORE">Dead store to local variable</a>
+</h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables.  Because FindBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="DMI_EMPTY_DB_PASSWORD">Empty database password</a>
+</h2>
+      
+    <p>This code creates a database connect using a blank or empty password. This indicates that the database is not protected by a password.
+</p>
+
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="EI_EXPOSE_REP2">May expose internal representation by incorporating reference to mutable object</a>
+</h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="ES_COMPARING_STRINGS_WITH_EQ">Comparison of String objects using == or !=</a>
+</h2>
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">Class names shouldn't shadow simple name of superclass</a>
+</h2>
+
+  <p> This class has a simple name that is identical to that of its superclass, except
+that its superclass is in a different package (e.g., <code>alpha.Foo</code> extends <code>beta.Foo</code>).
+This can be exceptionally confusing, create lots of situations in which you have to look at import statements
+to resolve references and creates many
+opportunities to accidently define methods that do not override methods in their superclasses.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NM_FIELD_NAMING_CONVENTION">Field names should start with a lower case letter</a>
+</h2>
+
+  <p>
+Names of fields that are not final should be in mixed case with a lowercase first letter and the first letters of subsequent words capitalized.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NM_METHOD_NAMING_CONVENTION">Method names should start with a lower case letter</a>
+</h2>
+
+  <p>
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of each internal word capitalized.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="NP_NULL_ON_SOME_PATH_EXCEPTION">Possible null pointer dereference in method on exception path</a>
+</h2>
+
+<p> A reference value which is null on some exception control path is
+dereferenced here.&nbsp; This may lead to a <code>NullPointerException</code>
+when the code is executed.&nbsp;
+Note that because FindBugs currently does not prune infeasible exception paths,
+this may be a false warning.</p>
+
+<p> Also note that FindBugs considers the default case of a switch statement to
+be an exception path, since the default case is often infeasible.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="OBL_UNSATISFIED_OBLIGATION">Method may fail to clean up stream or resource</a>
+</h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">Method may fail to clean up stream or resource on checked exception</a>
+</h2>
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="ODR_OPEN_DATABASE_RESOURCE">Method may fail to close database resource</a>
+</h2>
+
+<p> The method creates a database resource (such as a database connection
+or row set), does not assign it to any
+fields, pass it to other methods, or return it, and does not appear to close
+the object on all paths out of the method.&nbsp; Failure to
+close database resources on all paths out of a method may
+result in poor performance, and could cause the application to
+have problems communicating with the database.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SA_LOCAL_SELF_ASSIGNMENT">Self assignment of local variable</a>
+</h2>
+
+<p> This method contains a self assignment of a local variable; e.g.</p>
+<pre>
+  public void foo() {
+    int x = 3;
+    x = x;
+  }
+</pre>
+<p>
+Such assignments are useless, and may indicate a logic error or typo.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="COMMAND_INJECTION">Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<p>
+<b>Reference</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="PATH_TRAVERSAL_IN">Potential Path Traversal (File Read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter. 
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="http://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">A prepared statement is generated from a nonconstant String</a>
+</h2>
+
+  <p>The code creates an SQL prepared statement from a nonconstant String.
+If unchecked, tainted data from a user is used in building this String, SQL injection could
+be used to make the prepared statement do something unexpected and undesirable.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</h2>
+
+  <p>The method invokes the execute or addBatch method on an SQL statement with a String that seems
+to be dynamically generated. Consider using
+a prepared statement instead. It is more efficient and less vulnerable to
+SQL injection attacks.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Write to static field from instance method</a>
+</h2>
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+</body>
+</html>
